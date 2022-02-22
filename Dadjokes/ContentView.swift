@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     //MARK: Stored Properties
-   @State var currentJoke: Dadjoke = Dadjoke(id: "",joke: "knock, knock...", status: 0)
+    @State var currentJoke: DadJoke = DadJoke(id: "",joke: "knock, knock...", status: 0)
     
     var body: some View {
         VStack {
@@ -18,13 +18,14 @@ struct ContentView: View {
             Text(currentJoke.joke)
                 .multilineTextAlignment(.leading)
                 .padding(30)
+                .minimumScaleFactor(0.5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
                         .stroke(Color.primary, lineWidth: 4)
                 )
                 .padding(10)
             
-           Image(systemName: "heart.circle")
+            Image(systemName: "heart.circle")
                 .resizable()
                 .frame(width: 40, height: 40)
             
@@ -50,7 +51,7 @@ struct ContentView: View {
             }
             
             Spacer()
-                        
+            
         }
         // When the app opens, get a new joke from the web service
         .task {
