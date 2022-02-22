@@ -20,6 +20,25 @@ struct ContentView: View {
                 )
                 .padding(10)
             
+           Image(systemName: "heart.circle")
+                .resizable()
+                .frame(width: 40, height: 40)
+            
+            Button(action:{
+                print("I've been pressed")
+            }, label: {
+                Text("Another one!")
+            })
+                .buttonStyle(.bordered)
+            
+            HStack {
+                Text("Favourates")
+                    .bold()
+                
+                Spacer()
+                
+            }
+            
             List {
                 Text("Which side of the chicken has more feathers? The outside.")
                 Text("Why did the Clydesdale give the pony a glass of water? Because he was a little horse!")
